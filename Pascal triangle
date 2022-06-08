@@ -1,0 +1,19 @@
+class Solution {
+public:
+    vector<vector<int>> generate(int numRows) {
+        vector<vector<int>> v(numRows);
+        v[0].push_back(1);
+        for(int i=1;i<numRows;i++){
+            for(int j=0;j<=i;j++){
+                if(i==j||j==0) v[i].push_back(1);
+                else{
+                    v[i].push_back(v[i-1][j]+v[i-1][j-1]);
+                }
+            }
+        }
+        return v;
+    }
+};
+
+Here we will add for size 1 because in constraint it is given that we have atleast size =1 ;
+Now at first and last position we will add 1 for the rest we will do sum of its previous row value at its column and previous column.
