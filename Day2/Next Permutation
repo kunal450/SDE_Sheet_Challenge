@@ -1,0 +1,32 @@
+#include<bits/stdc++.h>
+class Solution {
+public:
+    void nextPermutation(vector<int>& nums) {
+        bool flag=false;
+        int index;
+        for(int i=nums.size()-1;i>0;i--){
+            if(nums[i]>nums[i-1]){
+                     index=i-1;
+                     break;
+                }
+                }
+        for(int i=nums.size()-1;i>index;i--){
+            if(nums[i]>nums[index]){
+                swap(nums[i],nums[index]);
+                reverse(nums.begin()+index+1,nums.end());
+                flag=true; 
+                break;
+                }
+                }
+        int n=nums.size();
+        if(!flag){
+            for(int i=0;i<nums.size()/2;i++){
+                swap(nums[i],nums[n-i-1]);
+            }
+        }
+    }
+};
+
+// here we eil first a value from back which is less than its nect value like 1,2,3,5,4,3  here we can see thatat pos 2 = 3 and pos3=5 so here 3<5 .
+Now once we get this value we will next find the first value from reverse which is greater than 3 and then swap them ,
+After that we will reverse the value after postion 3(i.e. after postion 2 =3}.
