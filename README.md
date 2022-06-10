@@ -17,4 +17,9 @@
 |       |4.Find the duplicate in an array of N+1 integer|
 |       |5.Repeat and missing Number|
 |       |                    |
+|#Day3|           |
+|       |1.Search in 2d matrix|
+|       |2.Pow(x,n)|
+|       |3.majority element (>n/2)|
+|       |4.majority element (>n/3)|
 
